@@ -1,0 +1,19 @@
+{
+  "name": "@curiouscrusher/shopify-theme-helpers",
+  "version": "1.0.0-alpha.1",
+  "description": "A collection of useful utilities for developing frontend Shopify themes.",
+  "main": "index.js",
+  "repository": "https://github.com/curiouscrusher/Shopify-Theme-Helpers/tree/master/",
+  "homepage": "https://github.com/curiouscrusher/Shopify-Theme-Helpers#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified, you should fix that.\""
+  },
+  "keywords": [
+    "Shopify",
+    "JavaScript",
+    "Themes",
+    "Utilities"
+  ],
+  "author": "Nate Holland",
+  "license": "ISC"
+}
