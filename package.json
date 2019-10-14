@@ -1,6 +1,6 @@
 {
   "name": "@curiouscrusher/shopify-theme-helpers",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "A collection of useful utilities for developing frontend Shopify themes.",
   "main": "dist/index.js",
   "repository": "https://github.com/curiouscrusher/Shopify-Theme-Helpers/tree/master/",
