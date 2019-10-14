@@ -5,6 +5,8 @@
  *
  */
 
+import * as validate from './validate';
+
 /**
  * Grams To Pounds
  * @param {integer} weight Item weight in grams
@@ -12,6 +14,8 @@
  *
  */
 export function gramsToPounds(weight) {
+    validate.weight(weight);
+
     return (weight * 0.00220462262185).toFixed(3);
 }
 
@@ -22,8 +26,9 @@ export function gramsToPounds(weight) {
  *
  */
 export function debounce(func, time) {
-    let timeout;
+    validate.time(time);
 
+    let timeout;
     return function() {
         const functionCall = () => func.apply(this, arguments);
 
@@ -39,6 +44,8 @@ export function debounce(func, time) {
  *
  */
 export function handleize(str) {
+    validate.str(str);
+
     return str.toLowerCase().replace(/[^\w\u00C0-\u024f]+/g, "-").replace(/^-+|-+$/g, "");
 }
 
@@ -50,7 +57,10 @@ export function handleize(str) {
  *
  */
 export function truncateWords(str, maxLen) {
-    if (str.length <= maxLen) return str;
+    validate.str(str);
+    validate.maxLen(maxLen);
+
+    if (str.split(` `).length <= maxLen) return str;
     return `${str.split(` `).splice(0,maxLen).join(` `)}...`;
 }
 
@@ -63,11 +73,14 @@ export function truncateWords(str, maxLen) {
  *
  */
 export function split(str, char, side = `first` ) {
-    let sideToReturn = side;
-    if (sideToReturn === `first`) {
+    validate.str(str);
+    validate.char(char);
+    validate.side(side);
+
+    if (side === `first`) {
         const newString = str.split(char);
         return newString[0].trim();
-    } else if (sideToReturn === `last`) {
+    } else {
         const newString = str.split(char);
         return newString[1].trim();
     }
